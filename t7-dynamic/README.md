@@ -2,6 +2,8 @@ Notes:
 	- go binaries are statically linked with excpetions:
 		- e.g net/http
 	- "external" linking, where the system linker is invoked after the go-provided one (6l, 8l, or 5l) to actually perform the final link, and thus supports the full range of features needed to statically link most code properly. Note: the "external" linking mode doesn't enforce static linking, it is just better supported
+	- LD_LIBRAY_PATH OR -Wl,-rpath=/home/username/foo OR use "ldconfig" (ld config tool) - to let the linux loader where to find the libraries
+		- rpath - is fixed; less flexible
 
 
 go tool cgo [cgo options] [-- compiler options] gofiles...
